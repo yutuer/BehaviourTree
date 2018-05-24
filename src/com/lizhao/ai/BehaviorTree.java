@@ -1,11 +1,11 @@
 package com.lizhao.ai;
 
-import com.lizhao.ai.itf.IBehavior;
+import com.lizhao.ai.ifs.IBehaviour;
 
 public class BehaviorTree {
-  private IBehavior root;
+  private IBehaviour root;
 
-  public BehaviorTree(IBehavior root) {
+  public BehaviorTree(IBehaviour root) {
     this.root = root;
   }
 
@@ -17,7 +17,7 @@ public class BehaviorTree {
     return root != null ? true : false;
   }
 
-  public void setRoot(IBehavior inNode) {
+  public void setRoot(IBehaviour inNode) {
     root = inNode;
   }
 
