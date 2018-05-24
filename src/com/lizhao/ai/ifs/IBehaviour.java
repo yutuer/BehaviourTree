@@ -1,6 +1,6 @@
-package com.lizhao.ai.itf;
+package com.lizhao.ai.ifs;
 
-import com.lizhao.ai.EStatus;
+import com.lizhao.ai.common.EStatus;
 
 /**
  * Behavior接口是所有行为树节点的核心，且我规定所有节点的构造和析构方法都必须是protected，以防止在栈上创建对象，
@@ -10,7 +10,7 @@ import com.lizhao.ai.EStatus;
  * Update（）方法在行为树每次更新时调用且仅调用一次。
  * 当行为不再处于运行状态时，调用一次OnTerminate（），并根据返回状态不同执行不同的逻辑
  */
-public interface IBehavior {
+public interface IBehaviour {
   //
   //  //创建对象请调用Create()释放对象请调用Release()
   //  protected Behavior() {
@@ -21,7 +21,7 @@ public interface IBehavior {
   //包装函数，防止打破调用契约
   EStatus tick();
 
-  void addChild(IBehavior child);
+  void addChild(IBehaviour child);
 
   EStatus update();
 
