@@ -1,7 +1,7 @@
 package com.lizhao.ai.abs;
 
-import com.lizhao.ai.EStatus;
-import com.lizhao.ai.itf.IBehavior;
+import com.lizhao.ai.common.EStatus;
+import com.lizhao.ai.ifs.IBehaviour;
 
 /**
  * Behavior接口是所有行为树节点的核心，且我规定所有节点的构造和析构方法都必须是protected，以防止在栈上创建对象，
@@ -11,7 +11,7 @@ import com.lizhao.ai.itf.IBehavior;
  * Update（）方法在行为树每次更新时调用且仅调用一次。
  * 当行为不再处于运行状态时，调用一次OnTerminate（），并根据返回状态不同执行不同的逻辑
  */
-public abstract class BaseBehavior implements IBehavior {
+public abstract class BaseBehavior implements IBehaviour {
 
   protected EStatus status;
 
@@ -37,18 +37,20 @@ public abstract class BaseBehavior implements IBehavior {
     return status;
   }
 
-  public abstract void addChild(BaseBehavior child);
+//  public abstract void addChild(IBehaviour child);
+//
+//  public abstract EStatus update();
 
-  public abstract EStatus update();
+//  public void onInitialize() {
+//  }
+//
+//  public void onTerminate(EStatus Status) {
+//  }
 
-  public void onInitialize() {
-  }
+//  //释放对象所占资源
+  public void release(){
 
-  public void onTerminate(EStatus Status) {
-  }
-
-  //释放对象所占资源
-  public abstract void release();
+  };
 
   public void setStatus(EStatus status) {
     this.status = status;
@@ -56,5 +58,15 @@ public abstract class BaseBehavior implements IBehavior {
 
   public EStatus getStatus() {
     return status;
+  }
+
+  @Override
+  public void onInitialize() {
+
+  }
+
+  @Override
+  public void onTerminate(EStatus Status) {
+
   }
 };

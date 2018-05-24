@@ -1,4 +1,4 @@
-package com.lizhao.ai;
+package com.lizhao.ai.common;
 
 public enum EStatus {
   Invalid,   //初始状态
