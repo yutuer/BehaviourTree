@@ -1,6 +1,6 @@
 package com.lizhao.tree;
 
-import com.lizhao.ai.EStatus;
+import com.lizhao.ai.common.EStatus;
 
 /**
  * Behavior接口是所有行为树节点的核心，且我规定所有节点的构造和析构方法都必须是protected，以防止在栈上创建对象，
