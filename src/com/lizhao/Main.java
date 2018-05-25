@@ -32,8 +32,6 @@ public class Main {
             .addBehaviour(new ActionPatrol())
         .end();
 
-
-
     //模拟执行行为树
     for (int i = 0; i < 10; ++i){
       behaviorTree.tick();

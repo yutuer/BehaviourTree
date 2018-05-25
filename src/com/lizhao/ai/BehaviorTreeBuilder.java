@@ -2,7 +2,7 @@ package com.lizhao.ai;
 
 import com.lizhao.ai.ifs.IBehaviour;
 
-import java.util.Stack;
+        import java.util.Stack;
 
 public class BehaviorTreeBuilder {
   private Stack<IBehaviour> behaviourStack = new Stack<>();

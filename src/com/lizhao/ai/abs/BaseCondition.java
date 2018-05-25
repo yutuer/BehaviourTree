@@ -19,7 +19,5 @@ public abstract class BaseCondition extends BaseBehavior implements ICondition {
     Double random = Math.random() * 100;
     //    int i = random.intValue();
     return random.intValue();
-
   }
-
 }

@@ -37,21 +37,9 @@ public abstract class BaseBehavior implements IBehaviour {
     return status;
   }
 
-//  public abstract void addChild(IBehaviour child);
-//
-//  public abstract EStatus update();
-
-//  public void onInitialize() {
-//  }
-//
-//  public void onTerminate(EStatus Status) {
-//  }
-
 //  //释放对象所占资源
   public void release(){
-
   };
-
   public void setStatus(EStatus status) {
     this.status = status;
   }
@@ -62,11 +50,9 @@ public abstract class BaseBehavior implements IBehaviour {
 
   @Override
   public void onInitialize() {
-
   }
 
   @Override
   public void onTerminate(EStatus Status) {
-
   }
-};
+}
