@@ -9,6 +9,7 @@ import com.lizhao.ai.impl.composite.SelectorImpl;
 import com.lizhao.ai.impl.composite.SequenceImpl;
 import com.lizhao.ai.impl.condition.ConditionIsHealthLow;
 import com.lizhao.ai.impl.condition.ConditionIsSeeEnemy;
+import com.lizhao.ai.impl.decorator.Repeat;
 
 public class Main {
   public static void main(String[] args) {
@@ -25,7 +26,9 @@ public class Main {
                   .addBehaviour(new ActionRunaway())
                     .back()
                   .back()
-                .addBehaviour(new ActionAttack())
+                .addBehaviour(new Repeat())
+                  .addBehaviour(new ActionAttack())
+                    .back()
                   .back()
                 .back()
               .back()

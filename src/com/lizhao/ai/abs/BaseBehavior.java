@@ -55,4 +55,15 @@ public abstract class BaseBehavior implements IBehaviour {
   @Override
   public void onTerminate(EStatus Status) {
   }
+
+  @Override
+  public void reset() {
+    setStatus(EStatus.Invalid);
+  }
+
+  @Override
+  public void abort() {
+    onTerminate(EStatus.Aborted);
+    setStatus(EStatus.Aborted);
+  }
 }

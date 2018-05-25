@@ -32,4 +32,9 @@ public interface IBehaviour {
   void setStatus(EStatus status);
 
   EStatus getStatus();
-};
+
+  void reset();
+
+  void abort();
+
+}
