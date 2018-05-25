@@ -29,8 +29,8 @@ public class Main {
                   .back()
                 .back()
               .back()
-          .addBehaviour(new ActionPatrol())
-      .end();
+            .addBehaviour(new ActionPatrol())
+        .end();
 
 
 
@@ -40,6 +40,6 @@ public class Main {
       System.out.println("--------------" + i + "------------");
     }
 
-    System.out.println("pause");
+    System.out.println("pause ");
   }
 }
