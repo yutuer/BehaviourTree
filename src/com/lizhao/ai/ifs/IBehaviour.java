@@ -17,20 +17,17 @@ public interface IBehaviour {
   //    setStatus(EStatus.Invalid);
   //  }
 
+  EStatus tick();//设置调用顺序，onInitialize--update--onTerminate
 
-  //包装函数，防止打破调用契约
-  EStatus tick();
+  void onInitialize();//当节点调用前
+
+  EStatus update();//节点操作的具体实现
+
+  void onTerminate(EStatus Status); //节点调用后执行
+
+  void release();//释放对象所占资源
 
   void addChild(IBehaviour child);
-
-  EStatus update();
-
-  void onInitialize();
-
-  void onTerminate(EStatus Status);
-
-  //释放对象所占资源
-  void release();
 
   void setStatus(EStatus status);
 
