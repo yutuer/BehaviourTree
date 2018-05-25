@@ -6,6 +6,10 @@ import com.lizhao.ai.ifs.IBehaviour;
 
 public class ConditionIsEnemyDead extends BaseCondition {
 
+  public ConditionIsEnemyDead(boolean b) {
+    setNegation(b);
+  }
+
   @Override
   public EStatus update() {
     int random = getRandom();
@@ -22,4 +26,5 @@ public class ConditionIsEnemyDead extends BaseCondition {
   @Override
   public void addChild(IBehaviour child) {
   }
+
 }

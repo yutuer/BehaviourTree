@@ -7,7 +7,7 @@ import com.lizhao.ai.ifs.IBehaviour;
 public class Repeat extends BaseDecorator {
 
   private int limited = 3;
-  int count = 0;
+  private volatile int count = 0;
 
   @Override
   public EStatus update() {
@@ -21,10 +21,15 @@ public class Repeat extends BaseDecorator {
         default:
           break;
       }
-      if (++count == limited)
+      if (++count > limited)
         return EStatus.Success;
       child.reset();
     }
+  }
+
+  @Override
+  public void onInitialize() {
+    count = 0;
   }
 
   @Override

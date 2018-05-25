@@ -2,11 +2,14 @@ package com.lizhao;
 
 import com.lizhao.ai.BehaviorTree;
 import com.lizhao.ai.BehaviorTreeBuilder;
+import com.lizhao.ai.common.EPolicy;
 import com.lizhao.ai.impl.action.ActionAttack;
 import com.lizhao.ai.impl.action.ActionPatrol;
 import com.lizhao.ai.impl.action.ActionRunaway;
+import com.lizhao.ai.impl.composite.ParallelImpl;
 import com.lizhao.ai.impl.composite.SelectorImpl;
 import com.lizhao.ai.impl.composite.SequenceImpl;
+import com.lizhao.ai.impl.condition.ConditionIsEnemyDead;
 import com.lizhao.ai.impl.condition.ConditionIsHealthLow;
 import com.lizhao.ai.impl.condition.ConditionIsSeeEnemy;
 import com.lizhao.ai.impl.decorator.Repeat;
@@ -26,8 +29,13 @@ public class Main {
                   .addBehaviour(new ActionRunaway())
                     .back()
                   .back()
-                .addBehaviour(new Repeat())
-                  .addBehaviour(new ActionAttack())
+
+                .addBehaviour(new ParallelImpl(EPolicy.RequireAll,EPolicy.RequireOne))
+                  .addBehaviour(new ConditionIsEnemyDead(true))
+                         .back()
+                  .addBehaviour(new Repeat())
+                    .addBehaviour(new ActionAttack())
+                      .back()
                     .back()
                   .back()
                 .back()
