@@ -1,7 +1,7 @@
-# ServerByNetty3
+# BehaviourTree
 
 #### 项目介绍
-ServerByNetty3
+BehaviourTree，使用java实现
 
 #### 软件架构
 软件架构说明
@@ -9,15 +9,10 @@ ServerByNetty3
 
 #### 安装教程
 
-1. xxxx
-2. xxxx
-3. xxxx
-
+1. 直接运行com.lizhao.Main
 #### 使用说明
 
-1. xxxx
-2. xxxx
-3. xxxx
+
 
 #### 参与贡献
 
