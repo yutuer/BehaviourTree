@@ -11,19 +11,6 @@ public class AStar {
 
   public Point[][] map = new Point[mapWith][mapHeight];
 
-  public static void main(String[] args) {
-    AStar aStar = new AStar();
-
-    aStar.initMap();
-    Point start = aStar.map[4][5];
-    Point end = aStar.map[8][5];
-
-    aStar.findPath(start, end);
-    aStar.showPath(start, end);
-    aStar.showLoad();
-    System.out.println("Hello World! ");
-  }
-
   public void showLoad() {
     for (int j = map.length - 1; j >= 0; j--) {
       for (int i = 0; i < map[j].length; i++) {
@@ -67,12 +54,14 @@ public class AStar {
 
   public void findPath(Point start, Point end) {
 
-    List<Point> openList = new ArrayList<Point>();
+    MyBinaryHeap<Point> openList = new MyBinaryHeap<Point>();
     List<Point> closeList = new ArrayList<Point>();
     openList.add(start);
     while (openList.size() > 0) {
-      Point point = findMinFOfPoint(openList);
-      openList.remove(point);
+//      Point point = findMinFOfPoint(openList);
+
+      Point point = openList.findMin();
+      openList.deleteMin();
       closeList.add(point);
       List<Point> surroundPoints = getSurroundPoints(point);
       pointsFilter(surroundPoints, closeList);

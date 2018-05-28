@@ -1,6 +1,6 @@
 package com.lizhao.astar.siki;
 
-public class Point {
+public class Point implements Comparable<Point> {
   private Point parent;
   private int x;
   private int y;
@@ -96,5 +96,10 @@ public class Point {
 
   public void setLoad(boolean load) {
     isLoad = load;
+  }
+
+  @Override
+  public int compareTo(Point point) {
+    return Float.compare(F, point.getF());
   }
 }
