@@ -102,4 +102,9 @@ public class Point implements Comparable<Point> {
   public int compareTo(Point point) {
     return Float.compare(F, point.getF());
   }
+
+  @Override
+  public String toString() {
+    return "Point " + (getX() + 1) + "," + (getY() + 1);
+  }
 }

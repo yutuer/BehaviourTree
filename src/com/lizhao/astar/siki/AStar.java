@@ -45,6 +45,7 @@ public class AStar {
         map[x][y] = new Point(x, y);
       }
     }
+//    map[6][3].setWall(true);
     map[6][4].setWall(true);
     map[6][5].setWall(true);
     map[6][6].setWall(true);
@@ -59,13 +60,20 @@ public class AStar {
     openList.add(start);
     while (openList.size() > 0) {
 //      Point point = findMinFOfPoint(openList);
-
       Point point = openList.findMin();
       openList.deleteMin();
       closeList.add(point);
       List<Point> surroundPoints = getSurroundPoints(point);
       pointsFilter(surroundPoints, closeList);
 
+      System.out.println(point);
+
+      if(point.getX()==5&&point.getY()==3){
+        int i = 0;
+      }
+      if(point.getX()==5&&point.getY()==5){
+        int i = 0;
+      }
       for (Point surroundPoint : surroundPoints) {
         if (openList.indexOf(surroundPoint) > -1) {
           float nowG = calcG(surroundPoint, point);
