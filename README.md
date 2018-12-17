@@ -15,7 +15,7 @@ BehaviourTree，使用java实现
 
 #### 联系方式
   博客地址：https://blog.csdn.net/cmqwan/article/details/80453352
-  qq群：676231524
+  qq群：676231564
 #### 参与贡献
 
 1. Fork 本项目
